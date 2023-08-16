@@ -1,0 +1,63 @@
+@import "./font.css";
+
+html,
+body {
+   font-family: "Open Sans";
+   background: var(
+      --interface-colors-ocean-deep,
+      linear-gradient(180deg, #020549 0%, #02031f 100%)
+   );
+   background-repeat: no-repeat;
+   min-height: 100vh;
+   margin: 0;
+}
+button {
+   cursor: pointer;
+}
+button,
+input {
+   font-family: inherit;
+   background-color: transparent;
+   border: none;
+   box-sizing: border-box;
+   font-size: inherit;
+}
+
+input::placeholder {
+   font-family: inherit;
+}
+
+notification-container {
+   display: flex;
+   bottom: 0;
+   left: 0;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   z-index: 99;
+   width: 100%;
+}
+
+notification-box {
+   display: block;
+   font-size: 11pt;
+   background-color: hwb(327 55% 9%);
+   border-radius: 10px;
+   opacity: 0.6;
+   padding: 19px 39px;
+   margin-bottom: 3vh;
+   animation: notification-box 500ms;
+   transition-duration: 500ms;
+}
+
+notification-box.closed {
+   transform: translateY(90px);
+   opacity: 0;
+}
+
+@keyframes notification-box {
+   from {
+      transform: translateY(90px);
+      opacity: 0;
+   }
+}
